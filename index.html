@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rohit Verma - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,439 +13,221 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+            font-family: 'EB Garamond', serif;
+            background-color: #f5f5f5;
+            color: #1a1a1a;
         }
 
-        /* Navigation */
         nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(248, 249, 250, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            padding: 0 2rem;
-        }
-
-        .nav-btn {
-            background: #d1d5db;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: #374151;
-            font-size: 0.95rem;
-        }
-
-        .nav-btn:hover {
-            background: #9ca3af;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .nav-btn.active {
-            background: #6b7280;
-            color: white;
-        }
-
-        /* Main container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            margin-top: 100px;
-        }
-
-        /* Hero section */
-        .hero {
-            display: flex;
-            align-items: center;
-            gap: 4rem;
-            margin-bottom: 6rem;
-            min-height: 60vh;
-        }
-
-        .hero-image {
             position: relative;
-            flex-shrink: 0;
+            background-image: url('cool-black-background-zuepoib34iujg4he.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 28px 80px;
+            overflow: hidden;
         }
 
-        .photo-container {
+        nav::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: 1;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            gap: 50px;
             position: relative;
             z-index: 2;
         }
 
-        .photo {
-            width: 280px;
-            height: 350px;
-            border-radius: 20px;
-            object-fit: cover;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            padding: 10px 18px;
+            border-radius: 5px;
         }
 
-        .geometric-shape {
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: rgba(255, 255, 255, 0.18);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 90px;
+            flex-wrap: wrap;
+            margin-bottom: 90px;
+        }
+
+        .profile-section {
+            flex: 0 0 320px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .profile-wrapper {
+            position: relative;
+            width: 260px;
+            height: 330px;
+        }
+
+        .diamond-back {
             position: absolute;
-            width: 300px;
-            height: 300px;
-            background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
-            transform: rotate(45deg);
+            inset: 0;
+            background-image: url('832370-matte-black-wallpaper.png');
+            opacity: 0.75;
+            border-radius: 2px;
+            /* background-color: #b0b0b0; */
+            transform: rotate(35deg);
+        }
+
+        .photo-frame {
+            position: absolute;
             top: 50%;
             left: 50%;
-            margin-top: -150px;
-            margin-left: -120px;
-            z-index: 1;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            width: 260px;
+            height: 260px;
+            border-radius: 2px;
+            overflow: hidden;
+            transform: translate(-50%, -50%);
         }
 
-        .hero-content {
-            flex: 1;
-            padding-left: 5rem;
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: #1f2937;
+        .intro-section {
+            flex: 1 1 400px;
         }
 
-        .hero-description {
-            font-size: 1.1rem;
+        .intro-section h1 {
+            font-size: 52px;
+            font-weight: 600;
+            margin-bottom: 28px;
+        }
+
+        .intro-section p {
+            font-size: 18px;
             line-height: 1.8;
-            color: #4b5563;
-            max-width: 600px;
+            color: #2d2d2d;
+            text-align: justify;
         }
 
-        /* Section styling */
         .section {
-            margin-bottom: 5rem;
+            margin-bottom: 70px;
         }
 
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            color: #1f2937;
+        .section h2 {
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 32px;
         }
 
-        .section-content {
-            background: white;
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            border: 1px solid #e5e7eb;
-        }
-
-        .project-item, .work-item {
-            padding: 1.5rem 0;
-            border-bottom: 1px solid #e5e7eb;
-            font-size: 1.1rem;
-            color: #4b5563;
-        }
-
-        .project-item:last-child, .work-item:last-child {
-            border-bottom: none;
+        .section p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #2d2d2d;
+            margin-left: 30px;
         }
 
         .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+            margin-left: 30px;
         }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 1.1rem;
-            color: #4b5563;
+        .contact-info p {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #2d2d2d;
         }
 
-        .contact-label {
+        .contact-info strong {
             font-weight: 600;
-            color: #1f2937;
-            min-width: 100px;
         }
 
-        /* Responsive design */
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
+            nav {
+                padding: 24px 32px;
+            }
+
+            nav ul {
+                gap: 32px;
+            }
+
+            .container {
+                padding: 60px 24px;
+            }
+
             .hero {
                 flex-direction: column;
-                text-align: center;
-                gap: 2rem;
+                gap: 60px;
+                margin-bottom: 70px;
             }
 
-            .hero-content {
-                padding-left: 0;
-            }
-
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .photo {
-                width: 240px;
-                height: 300px;
-            }
-
-            .geometric-shape {
-                width: 260px;
-                height: 260px;
-                margin-top: -130px;
-                margin-left: -100px;
-            }
-
-            .nav-container {
-                gap: 1rem;
-            }
-
-            .nav-btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Animation */
-        .hero-image {
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .hero-content {
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
-
-        .section {
-            animation: fadeInUp 0.6s ease-out both;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            .profile-section {
+                flex: 0 0 auto;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
-        <div class="nav-container">
-            <a href="#home" class="nav-btn active">Home</a>
-            <a href="#projects" class="nav-btn">Projects</a>
-            <a href="#work" class="nav-btn">Work</a>
-            <a href="#contact" class="nav-btn">Contact</a>
-        </div>
+        <ul>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="xyz1.html">Projects</a></li>
+            <li><a href="xyz2.html">Work Experience</a></li>
+            <li><a href="xyz3.html">Academic</a></li>
+        </ul>
     </nav>
 
-    <!-- Main content -->
-    <div class="container">
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="hero-image">
-                <div class="geometric-shape"></div>
-                <div class="photo-container">
-                    <img src="Face_Pic.jpg" 
-                         alt="Rohit Verma" class="photo">
-                </div>
-            </div>
-            
-            <div class="hero-content">
-                <h1 class="hero-title">Rohit Verma</h1>
-                <p class="hero-description">
-                    I am Rohit Verma, a physics graduate with a strong interest in theoretical physics, particularly in the conceptual and foundational aspects of modern physical theories. My academic focus includes areas such as relativity and quantum field theory, with an emphasis on developing a deeper understanding of their underlying principles and logical structure. I am currently engaged in physics education research at HBCSE, TIFR, and preparing for doctoral studies in theoretical physics.
-                </p>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <!-- <section id="projects" class="section">
-            <h2 class="section-title">Research Projects</h2>
-            <div class="section-content">
-                <div class="project-item">
-                    Master's Thesis 1
-                </div>
-                <div class="project-item">
-                    DSKC Summer Project
-                </div>
-                <div class="project-item">
-                     Nuclear Mentoring Program | Remote Experience for Young Engineers and Scientists, 2022
-                     <i>Old Dominion University (Remotely)</i>
-                </div>
-            </div>
-        </section> -->
-        <section id="projects" class="section">
-            <h2 class="section-title">Research Projects</h2>
-            <div class="section-content">
-            
-                <div class="project-item">
-                    <strong>Probing Alternative Conceptions in Special Relativity | Master’s Thesis</strong><br>
-                    <i>Under Combined Supervision of Dr. Anwesh Mazumdar and Dr. Ananda Dasgupta<br>
-                    Homi Bhabha Centre for Science Education, TIFR, Mumbai | Jan 2025 – Present</i>
-                    <ul>
-                        <li>Developing a diagnostic instrument to identify alternative conceptions in special relativity.</li>
-                        <li>Working toward applying the tool to capture conceptual variations among students from diverse backgrounds.</li>
-                    </ul>
-                </div>
-            
-                <div class="project-item">
-                    <strong>Critical Phenomena in Equilibrium Systems | Master’s Thesis</strong><br>
-                    <i>Under Supervision of Dr. Ananda Dasgupta<br>
-                    Indian Institute of Science Education and Research, Kolkata | Aug 2024 – Dec 2024</i>
-                    <ul>
-                        <li>Investigated mean-field theory, path integral, and renormalization approaches in equilibrium systems.</li>
-                        <li>Studied phase transitions to enhance theoretical insight into statistical mechanics.</li>
-                    </ul>
-                </div>
-            
-                <div class="project-item">
-                    <strong>Perturbation Theory for Heavy Quarkonia | DSKC Summer Workshop</strong><br>
-                    <i>Under Supervision of Dr. Divakar Pathak<br>
-                    Miranda House, University of Delhi | Jun 2023 – Jul 2023</i>
-                    <ul>
-                        <li>Developed a Python-based numerical tool for perturbation theory calculations.</li>
-                        <li>Implemented first-order corrections and analyzed limitations in higher-order computations.</li>
-                        <li>Applied the method to study bound states in heavy quarkonium systems.</li>
-                    </ul>
-                </div>
-            
-                <div class="project-item">
-                    <strong>Nuclear Mentoring Program | Remote Experience for Young Engineers and Scientists</strong><br>
-                    <i>Old Dominion University (Remote) | Jun 2022 – Sep 2022</i>
-                    <ul>
-                        <li>Explored topics in quantum chromodynamics (QCD), scattering experiments, and QCD spectroscopy.</li>
-                        <li>Studied applications of AI and quantum computing in nuclear physics.</li>
-                        <li>Collaboratively analyzed neutron–proton scattering data using statistical tools in Python.</li>
-                    </ul>
-                </div>
-            
-            </div>
-        </section>
-
-
-        <!-- Work Section -->
-        <section id="work" class="section">
-            <h2 class="section-title">Work</h2>
-            <div class="section-content">
-            
-                <div class="work-item">
-                    <strong>Teaching Assistant – PH4213: Symmetry Methods in Physics</strong><br>
-                    <i>Indian Institute of Science Education and Research (IISER), Kolkata | Jan 2025 – May 2025</i>
-                    <ul>
-                        <li>Assisted in teaching an advanced group theory course for fourth-year undergraduates.</li>
-                        <li>Conducted tutorials, provided conceptual clarifications, and assisted in evaluations.</li>
-                    </ul>
-                </div>
-            
-                <div class="work-item">
-                    <strong>Teaching Assistant – PH2101: Mechanics II (Special Relativity)</strong><br>
-                    <i>Indian Institute of Science Education and Research (IISER), Kolkata | Aug 2024 – Dec 2024</i>
-                    <ul>
-                        <li>Led weekly tutorial sessions focused on conceptual challenges and problem-solving.</li>
-                        <li>Provided additional instruction and supported evaluation processes.</li>
-                        <li>Collaborated with fellow TAs to enhance student learning experience.</li>
-                    </ul>
-                </div>
-            
-                <div class="work-item">
-                    <strong>Teaching Assistant – PH1101: Mechanics I</strong><br>
-                    <i>Indian Institute of Science Education and Research (IISER), Kolkata | Aug 2023 – Dec 2023</i>
-                    <ul>
-                        <li>Delivered tutorials and guided students in first-year Newtonian mechanics.</li>
-                        <li>Clarified lecture material and provided individual support during problem-solving sessions.</li>
-                        <li>Assisted in assessments and grading tasks.</li>
-                    </ul>
-                </div>
-            
-            </div>
-        </section>
-
-
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <h2 class="section-title">Contact</h2>
-            <div class="section-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="contact-label">Email:</span>
-                        <span>rohitverma.phy@email.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">WhatsApp:</span>
-                        <span>Write to my email for requesting phone number in case you need it. Thank You :)</span>
+    <main class="container">
+        <section class="hero">
+            <div class="profile-section">
+                <div class="profile-wrapper">
+                    <span class="diamond-back"></span>
+                    <div class="photo-frame">
+                        <img src="WP3.png" alt="Portrait of Rohit Verma">
                     </div>
                 </div>
             </div>
+            <div class="intro-section">
+                <h1>Rohit Verma</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+            </div>
         </section>
-    </div>
 
-    <script>
-        // Navigation functionality
-        document.querySelectorAll('.nav-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Remove active class from all buttons
-                document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-                
-                // Add active class to clicked button
-                this.classList.add('active');
-                
-                // Smooth scroll to section
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
+        <section class="section">
+            <h2>Current Working Status</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </section>
 
-        // Update active nav button on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navButtons = document.querySelectorAll('.nav-btn');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navButtons.forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.getAttribute('href') === `#${current}`) {
-                    btn.classList.add('active');
-                }
-            });
-        });
-    </script>
+        <section class="section">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p><strong>Email:</strong> example@email.com</p>
+                <p><strong>Whatsapp:</strong> +91 XXXXX XXXXX</p>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
